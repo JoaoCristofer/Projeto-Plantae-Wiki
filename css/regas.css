@@ -1,0 +1,47 @@
+body {
+  background-color: #f4faf5;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+main.container {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+#listaRega {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.regar-btn {
+  display: inline-block;
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.regar-btn:hover {
+  background-color: #219150;
+}

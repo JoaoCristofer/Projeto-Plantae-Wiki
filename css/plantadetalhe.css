@@ -1,0 +1,40 @@
+body {
+  background: #f5fff8;
+  font-family: system-ui, sans-serif;
+  color: #333;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #276749;
+}
+
+.planta-imagem {
+  width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+  object-fit: cover;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  background-color: #38a169;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #2f855a;
+}

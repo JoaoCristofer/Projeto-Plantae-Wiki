@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlantaeWiki - Entrar</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <main class="login-container">
+      <article class="login-card">
+        <h1>🌱 PlantaeWiki</h1>
+
+        <!-- ===== LOGIN ===== -->
+        <section id="loginSection">
+          <h2>Bem-vindo de volta!</h2>
+          <form id="formLogin">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="seu@email.com" required />
+
+            <label for="loginSenha">Senha</label>
+            <div class="password-wrapper">
+              <input type="password" id="loginSenha" placeholder="Sua senha" required />
+              <button type="button" class="toggleSenha" data-target="loginSenha">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+
+            <button type="submit" class="contrast full-width">Entrar</button>
+            <small>Não tem conta? <a href="#" id="showCadastro">Criar conta</a></small>
+          </form>
+        </section>
+
+        <!-- ===== CADASTRO ===== -->
+        <section id="cadastroSection" class="hidden">
+          <h2>Criar nova conta</h2>
+          <form id="formCadastro">
+            <label for="cadNome">Nome completo</label>
+            <input type="text" id="cadNome" placeholder="Seu nome" required />
+
+            <label for="cadEmail">Email</label>
+            <input type="email" id="cadEmail" placeholder="seu@email.com" required />
+
+            <label for="cadSenha">Senha</label>
+            <div class="password-wrapper">
+              <input type="password" id="cadSenha" placeholder="Crie uma senha" required />
+              <button type="button" class="toggleSenha" data-target="cadSenha">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+
+            <label for="cadConfirmarSenha">Confirmar senha</label>
+            <div class="password-wrapper">
+              <input type="password" id="cadConfirmarSenha" placeholder="Confirme sua senha" required />
+              <button type="button" class="toggleSenha" data-target="cadConfirmarSenha">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+
+            <button type="submit" class="contrast full-width">Cadastrar</button>
+            <small>Já tem conta? <a href="#" id="showLogin">Entrar</a></small>
+          </form>
+        </section>
+      </article>
+    </main>
+
+    <script type="module" src="/js/login.js"></script>
+  </body>
+</html>

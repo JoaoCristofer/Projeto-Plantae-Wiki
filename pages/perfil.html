@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil - PlantaeWiki</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="/css/perfil.css" />
+  </head>
+  <body>
+    <nav class="container-fluid">
+      <ul>
+        <li><strong>PlantaeWiki</strong></li>
+      </ul>
+      <ul>
+        <li><a href="/pages/lobby.html">Lobby</a></li>
+        <li><a href="/pages/catalogo.html">Catálogo</a></li>
+        <li><a href="/pages/regas.html">Rega</a></li>
+        <li><a href="/pages/suasplantas.html">Suas Plantas</a></li>
+        <li><a href="/pages/perfil.html" role="button" class="secondary">Perfil</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <section class="perfil-header">
+        <h1 id="nomeUsuario">Perfil</h1>
+        <p id="emailUsuario" class="email"></p>
+        <button id="logoutBtn" class="contrast">Sair</button>
+      </section>
+
+      <section class="suas-plantas">
+        <h2>Suas Plantas 🌿</h2>
+        <div id="listaPlantas" class="grid"></div>
+      </section>
+    </main>
+
+    <footer class="container">
+      <small><a href="#">© 2025 PlantaeWiki</a> 
+    </footer>
+
+    <script type="module" src="/js/perfil.js"></script>
+  </body>
+</html>

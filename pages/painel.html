@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Administrativo - PlantaeWiki</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+  <link rel="stylesheet" href="/css/painel.css" />
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>PlantaeWiki</strong></li>
+    </ul>
+    <ul>
+      <li><a href="/pages/lobby.html">Lobby</a></li>
+      <li><a href="/pages/catalogo.html">Catálogo</a></li>
+      <li><a href="/pages/perfil.html">Perfil</a></li>
+      <li><a href="/pages/painel.html" role="button" class="secondary">Painel</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Painel Administrativo 🌿</h1>
+    <p>Adicione novas plantas ao banco de dados.</p>
+
+    <form id="formPlanta">
+      <div class="grid">
+        <label>
+          Nome comum
+          <input type="text" id="nome" name="nome" required />
+        </label>
+
+        <label>
+          Nome científico
+          <input type="text" id="nome_cientifico" name="nome_cientifico" />
+        </label>
+      </div>
+
+      <label>
+        Descrição
+        <textarea id="descricao" name="descricao" rows="3" placeholder="Breve descrição da planta..."></textarea>
+      </label>
+
+      <div class="grid">
+        <label>
+          Estação ideal
+          <input type="text" id="estacao_ideal" name="estacao_ideal" placeholder="Ex: Primavera" />
+        </label>
+
+        <label>
+          Ambiente ideal
+          <input type="text" id="ambiente_ideal" name="ambiente_ideal" placeholder="Ex: Interno, Externo" />
+        </label>
+      </div>
+
+      <div class="grid">
+        <label>
+          Tipo de solo
+          <input type="text" id="tipo_solo" name="tipo_solo" placeholder="Arenoso, Argiloso, etc." />
+        </label>
+
+        <label>
+          Incidência solar
+          <input type="text" id="incidencia_solar" name="incidencia_solar" placeholder="Alta, Média, Baixa" />
+        </label>
+      </div>
+
+      <div class="grid">
+        <label>
+          Tempo de crescimento (em dias)
+          <input type="number" id="tempo_crescimento" name="tempo_crescimento" placeholder="Ex: 90" />
+        </label>
+
+        <label>
+          Frequência de rega (em dias)
+          <input type="number" id="frequencia_rega" name="frequencia_rega" placeholder="Ex: 3" />
+        </label>
+      </div>
+
+      <label>
+        Nome do arquivo de imagem (sem extensão)
+        <input type="text" id="imagem" name="imagem" placeholder="Ex: alecrim" />
+      </label>
+
+
+      <button type="submit">Cadastrar Planta</button>
+    </form>
+
+    <div id="mensagem"></div>
+  </main>
+
+  <footer class="container">
+    <small>© 2025 PlantaeWiki</small>
+  </footer>
+
+  <script type="module" src="/js/painel.js"></script>
+</body>
+</html>

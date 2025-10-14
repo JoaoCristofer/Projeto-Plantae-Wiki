@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(180deg, #f5fff5, #ffffff);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  margin-top: 2rem;
+}
+
+form {
+  margin-top: 2rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#mensagem {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+}

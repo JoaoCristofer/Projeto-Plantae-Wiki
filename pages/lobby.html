@@ -1,0 +1,145 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantae Wiki</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="shortcut icon" href="img/Designer-removebg-preview.png" type="image/x-icon" />
+</head>
+
+<body>
+  <header class="header">
+    <img id="logo" src="/img/imagem1.png" width="300px" alt="logo" />
+    <section class="links">
+      <a href="/PagínasLobby/CRONOMETRO.HTML" class="botao-voltar">Clique aqui para ver o progresso de suas plantas!</a> <img
+        src="/img/folhaszinhas.gif" alt="Germinação" class="icone-folhas" />
+    </section>
+  </header>
+
+  <main>
+    <section id="esquerda" class="manos">
+      <label for="check"
+        style="position: absolute; top: 33.6vh; left: 2.9vw; width: 20.4vw; height: 31vh; cursor: pointer;">
+        <input id="check" type="checkbox" style="opacity: 0;position: absolute; top: 0vh; left: 0vw; width: 20.4vw; height: 31vh; background-color: aquamarine; "  />
+      </label>
+
+      <div id="guia" class="esqm">
+        <img id="g" src="/img/guia.jpg" alt="">
+        <div class="texto" style="display:none;"></div>
+      </div>
+
+      <div id="nov" class="esqm"><a href="pages/novidades.html">
+          <img id="n" src="/img/nov.jpg" alt=""></a>
+        <div class="texto" style="display:none;"></div>
+      </div>
+
+      <div id="clima" class="esqm"><a href="/pages/painel.html">
+          <img id="cl" src="/img/clima.jpg" alt=""></a>
+        <div class="texto" style="display:none;"></div>
+      </div>
+
+      <div id="tutorial" class="esqm"><a href="pages/tutorial.html">
+          <img id="t" src="/img/tutorial.jpg" alt=""></a>
+        <div class="texto" style="display:none;"></div>
+      </div>
+
+    </section>
+
+    <section id="direita" class="manos">
+
+      <div id="perfil" class="dirm"><a href="/pages/perfil.html">
+          <img id="p" src="/img/perfil.jpg" alt=""></a>
+        <div class="texto" style="display:none;"></div>
+      </div>
+
+
+
+      <div id="rega" class="dirm"><a href="/pages/regas.html">
+          <img id="r" src="/img/rega.jpg" alt=""></a>
+        <div class="texto" style="display:none;"></div>
+      </div>
+
+      <div id="plantas" class="dirm"><a href="/pages/suasplantas.html">
+          <img id="pl" src="/img/suasplantas.jpg" alt=""></a>
+        <div class="texto" style="display:none;"></div>
+      </div>
+      <div id="catalogo" class="dirm"><a href="/pages/catalogo.html">
+          <img id="c" src="/img/catalogo.jpg" alt=""></a>
+        <div class="texto" style="display:none;"></div>
+      </div>
+    </section>
+    <div style="clear: both;"></div>
+
+    <div id="container2">
+      <div class="card" style="--cor:#66CDAA;">
+        <div class="caixaimg">
+          <img src="/img/imagem11.jpg" alt="">
+        </div>
+        <div class="conteudo">
+          <h2>João Vitor Cosmo </h2>
+          <p>16 anos <br> Estudante do segundo ano do <br> Centro de Referência IFPR - Biopark </p>
+        </div>
+      </div>
+      <div class="card" style="--cor:#66CDAA;">
+        <div class="caixaimg">
+          <img src="/img/maria.jpg" alt="">
+        </div>
+        <div class="conteudo">
+          <h2>Maria L. Schossler</h2>
+          <p>17 anos <br> Estudante do segundo ano do <br> Centro de Referência IFPR - Biopark</p>
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+      <div class="gif-container">
+        <img src="/img/flores.gif" alt="GIF animado de plantas" class="footer-gif" />
+
+      </div>
+      </div>
+    </footer>
+
+    <script>
+      const checkbox = document.getElementById('check');
+
+      function toggleArea(id, descricao) {
+        const area = document.getElementById(id);
+        const img = area.querySelector('img');
+        const texto = area.querySelector('.texto');
+
+        if (checkbox.checked) {
+          img.style.opacity = '0'; // Esconde visualmente a imagem sem quebrar layout
+          img.style.pointerEvents = 'none'; // Evita interações
+          texto.textContent = descricao;
+          texto.style.display = 'block';
+          area.classList.add('moldura-ativa');
+        } else {
+          img.style.opacity = '1'; // Mostra a imagem de novo
+          img.style.pointerEvents = 'auto';
+          texto.style.display = 'none';
+          texto.textContent = '';
+          area.classList.remove('moldura-ativa');
+        }
+      }
+
+      checkbox.addEventListener('change', () => {
+        const areas = [
+          ['guia', 'Este botão ativa ou desativa as descrições de cada seção do site.'],
+          ['nov', 'Confira aqui as últimas novidades e atualizações do Plantae Wiki.'],
+          ['clima', 'Veja o clima atual da sua região para saber as melhores práticas de cultivo.'],
+          ['tutorial', 'Aprenda jardinagem e agricultura básica: como plantar, cuidar e manter suas plantas saudáveis.'],
+          ['perfil', 'Acesse e edite as informações do seu perfil de usuário.'],
+          ['rega', 'Veja a lista das plantas que precisam ser regadas hoje.'],
+          ['plantas', 'Aqui estão as plantas que você selecionou e cadastrou no seu perfil.'],
+          ['catalogo', 'Explore nosso catálogo detalhado de plantas, incluindo informações sobre o tempo de plantio e duração. ']
+        ];
+
+        areas.forEach(([id, descricao]) => toggleArea(id, descricao));
+      });
+    </script>
+
+</body>
+
+</html>

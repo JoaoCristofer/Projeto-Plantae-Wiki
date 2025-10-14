@@ -1,0 +1,86 @@
+body {
+  background-color: #f6fff8;
+}
+
+/* cabeçalho */
+.titulo {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* grade responsiva */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* card */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 280px;
+  min-height: 420px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* conteúdo */
+.card-content {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  font-weight: 600;
+  color: #1a531b;
+  margin-bottom: 0.3rem;
+}
+
+.card p {
+  color: #444;
+  flex-grow: 1;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem;
+}
+
+/* botão fixado na base */
+.card-footer {
+  margin-top: auto;
+}
+
+.card-footer a[role="button"] {
+  width: 100%;
+  background-color: #228b22;
+  color: white;
+  text-align: center;
+}
+
+.card-footer a:hover {
+  background-color: #1d741d;
+}
