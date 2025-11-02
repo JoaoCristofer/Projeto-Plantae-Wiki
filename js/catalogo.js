@@ -10,10 +10,11 @@ async function carregarPlantas() {
   const container = document.getElementById("plantasContainer");
   container.innerHTML = "";
 
-  data.forEach((planta) => {
+  for (const planta of data) {
     const nome = planta.nome;
     const descricao = planta.descricao || "Sem descrição disponível.";
-    const imagem = buscarImagem(planta.nome);
+    // usa o campo imagem da tabela agora
+    const imagem = await buscarImagem(planta.imagem);
 
     const card = document.createElement("article");
     card.classList.add("card");
@@ -28,19 +29,22 @@ async function carregarPlantas() {
       </div>
     `;
     container.appendChild(card);
-  });
+  }
 }
 
-// tenta carregar imagem independente do formato
-function buscarImagem(nome) {
+// tenta carregar imagem independente do formato (a partir do campo imagem)
+async function buscarImagem(nomeArquivo) {
   const basePath = "../img/";
   const formatos = ["jpg", "jpeg", "png", "webp"];
+
   for (const ext of formatos) {
-    const path = `${basePath}${nome.toLowerCase()}.${ext}`;
-    const xhr = new XMLHttpRequest();
-    xhr.open("HEAD", path, false);
-    xhr.send();
-    if (xhr.status === 200) return path;
+    const path = `${basePath}${nomeArquivo.toLowerCase().replace(/\s+/g, "")}.${ext}`;
+    try {
+      const res = await fetch(path, { method: "HEAD" });
+      if (res.ok) return path;
+    } catch (e) {
+      // ignora erro e tenta o próximo formato
+    }
   }
   return "../img/default.png";
 }

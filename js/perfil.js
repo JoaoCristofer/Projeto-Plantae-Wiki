@@ -13,11 +13,10 @@ if (!usuarioLogado) {
   carregarPlantas();
 }
 
-// Buscar plantas do usuário
 async function carregarPlantas() {
   const { data, error } = await supabase
     .from("usuario_plantas")
-    .select("*, plantas(nome, descricao)")
+    .select("*, plantas(nome, descricao, imagem)")
     .eq("usuario_id", usuarioLogado.id);
 
   if (error) {
@@ -25,30 +24,41 @@ async function carregarPlantas() {
     return;
   }
 
-  if (data.length === 0) {
+  if (!data || data.length === 0) {
     listaPlantas.innerHTML = `<p>Você ainda não adicionou nenhuma planta.</p>`;
     return;
   }
 
-  data.forEach((item) => {
-    const nomePlanta = item.plantas.nome;
-    const nomeArquivo = nomePlanta.toLowerCase().replace(/\s+/g, "");
-    const imgExts = ["jpg", "jpeg", "png", "webp"];
-    let imgSrc = "";
-
-    for (const ext of imgExts) {
-      const teste = `/img/${nomeArquivo}.${ext}`;
-      imgSrc = teste;
-    }
+  for (const item of data) {
+    const planta = item.plantas;
+    const nomePlanta = planta?.nome || "Planta";
+    const descricao = planta?.descricao || "Sem descrição disponível.";
+    const imagem = await buscarImagem(planta?.imagem);
 
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
-      <img src="${imgSrc}" alt="${nomePlanta}" />
+      <img src="${imagem}" alt="${nomePlanta}" />
       <h3>${nomePlanta}</h3>
     `;
     listaPlantas.appendChild(card);
-  });
+  }
+}
+
+// função para buscar imagem pelo campo imagem
+async function buscarImagem(nomeArquivo) {
+  if (!nomeArquivo) return "../img/default.png";
+  const basePath = "../img/";
+  const formatos = ["jpg", "jpeg", "png", "webp"];
+
+  for (const ext of formatos) {
+    const path = `${basePath}${nomeArquivo.toLowerCase().replace(/\s+/g, "")}.${ext}`;
+    try {
+      const res = await fetch(path, { method: "HEAD" });
+      if (res.ok) return path;
+    } catch (e) {}
+  }
+  return "../img/default.png";
 }
 
 // Logout
