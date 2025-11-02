@@ -14,7 +14,6 @@ form.addEventListener("submit", async (e) => {
     tipo_solo: form.tipo_solo.value.trim(),
     incidencia_solar: form.incidencia_solar.value.trim(),
     ambiente_ideal: form.ambiente_ideal.value.trim(),
-    categoria_id: parseInt(form.categoria_id.value) || null,
     estacao_ideal: form.estacao_ideal.value.trim(),
     frequencia_rega: parseInt(form.frequencia_rega.value) || null,
     imagem: form.imagem.value.trim(),
