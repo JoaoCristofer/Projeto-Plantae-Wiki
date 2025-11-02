@@ -1,17 +1,65 @@
+/* === CATÁLOGO DE PLANTAS - PLANTAEWIKI === */
+/* Paleta suave, tipografia legível e espaçamento confortável */
+
 body {
-  background-color: #f6fff8;
+  background: #f6fff8;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #2e3d32;
+  margin: 0;
+  padding: 0;
 }
 
-/* cabeçalho */
+/* --- NAVEGAÇÃO --- */
+nav.container-fluid {
+  background: #e9f7ec;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 2rem;
+  border-bottom: 1px solid #d9ebdc;
+}
+
+nav ul li strong {
+  color: #1a531b;
+  font-size: 1.2rem;
+}
+
+nav a {
+  color: #1a531b;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffffff;
+  background-color: #2b653e;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  transition: 0.2s ease;
+}
+
+/* --- CABEÇALHO DO CATÁLOGO --- */
 .titulo {
   text-align: center;
-  margin: 2rem 0;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-/* grade responsiva */
+.titulo h1 {
+  color: #1f5130;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.titulo p {
+  color: #4b5c4b;
+  font-size: 1.1rem;
+}
+
+/* --- GRADE RESPONSIVA DE PLANTAS --- */
 .catalogo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 2rem;
   justify-items: center;
   align-items: stretch;
@@ -20,36 +68,39 @@ body {
   margin: 0 auto;
 }
 
-/* card */
+/* --- CARD DE CADA PLANTA --- */
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(39, 103, 73, 0.08);
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   width: 100%;
-  max-width: 280px;
-  min-height: 420px;
+  max-width: 290px;
+  min-height: 440px;
+  border: 1px solid #e3f1e6;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(39, 103, 73, 0.12);
 }
 
+/* IMAGEM */
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  border-bottom: 1px solid #e3f1e6;
 }
 
-/* conteúdo */
+/* CONTEÚDO */
 .card-content {
   flex: 1;
-  padding: 1rem;
+  padding: 1.2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -57,30 +108,54 @@ body {
 }
 
 .card h3 {
-  font-weight: 600;
+  font-weight: 700;
   color: #1a531b;
-  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
 .card p {
-  color: #444;
-  flex-grow: 1;
-  font-size: 0.9rem;
-  margin: 0.5rem 0 1rem;
+  color: #4a554a;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
 }
 
-/* botão fixado na base */
+/* BOTÃO NA BASE DO CARD */
 .card-footer {
   margin-top: auto;
+  padding: 0 1.2rem 1.2rem;
 }
 
 .card-footer a[role="button"] {
   width: 100%;
-  background-color: #228b22;
-  color: white;
+  background-color: #2b653e;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.7rem;
   text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+  display: inline-block;
 }
 
 .card-footer a:hover {
-  background-color: #1d741d;
+  background-color: #1f5130;
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .titulo h1 {
+    font-size: 1.6rem;
+  }
+
+  .titulo p {
+    font-size: 1rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
 }
