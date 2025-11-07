@@ -1,0 +1,199 @@
+/* jardinagem.css */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Sevillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=DynaPuff:wght@400..700&family=Satisfy&display=swap');
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: f8f9fa;
+  color: #2f4237;
+}
+
+.header {
+  background-color: #e6edd9;
+  color: #2f3d2f;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: "Barlow Condensed", sans-serif;
+    font-weight: normal;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.dicas-texto {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+   font-family: "Barlow Condensed", sans-serif;
+    font-weight: normal;
+}
+
+.dicas-texto ul {
+  padding-left: 20px;
+}
+
+.videos h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.video iframe {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+.video p {
+  margin-top: 10px;
+  font-size: 0.95em;
+   font-family: "Barlow Condensed", sans-serif;
+    font-weight: normal;
+}
+
+.links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.links a {
+    background-color: #79bfa1;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.links a:hover {
+    background-color: #64a68c;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #d8f1e2;
+  font-size: 0.9em;
+  color: #3f5246;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .video {
+    width: 90%;
+  }
+}
+#titulo{
+  font-weight: normal;
+  font-family: Satisfy, sans-serif;
+}
+.dica-box {
+  display: flex;
+  align-items: flex-start;
+  background-color: #f0f7ef;
+  border-left: 6px solid #79bfa1;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.dica-box .icon {
+  font-size: 1.8em;
+  margin-right: 12px;
+  line-height: 1;
+}
+
+.dica-box p {
+  margin: 0;
+  font-size: 1.05em;
+  line-height: 1.4;
+}
+
+.icone-boboleta {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+nav.container-fluid {
+  background-color: #ecf9f0; /* tom verde-claro suave */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #d7eadc;
+  padding: 0.8rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav .logo img {
+  height: 42px; /* ajustável — ideal para uma logo escrita */
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav a {
+  color: #1a4a22;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #cdebd3;
+  color: #103e16;
+}
+
+nav a.active {
+  background-color: #bde2c2;
+  color: #103e16;
+}

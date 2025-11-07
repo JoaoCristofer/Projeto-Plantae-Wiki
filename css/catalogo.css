@@ -1,43 +1,71 @@
-/* === CATÁLOGO DE PLANTAS - PLANTAEWIKI === */
-/* Paleta suave, tipografia legível e espaçamento confortável */
+/* === TOPO / NAVEGAÇÃO === */
+nav.container-fluid {
+  background-color: #ecf9f0; /* tom verde-claro suave */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #d7eadc;
+  padding: 0.8rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-body {
-  background: #f6fff8;
-  font-family: "Inter", system-ui, sans-serif;
-  color: #2e3d32;
+/* LOGO (ESPAÇO À ESQUERDA) */
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav .logo img {
+  height: 42px; /* ajustável — ideal para uma logo escrita */
+  width: auto;
+}
+
+/* MENU */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
   margin: 0;
   padding: 0;
 }
 
-/* --- NAVEGAÇÃO --- */
-nav.container-fluid {
-  background: #e9f7ec;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 0.8rem 2rem;
-  border-bottom: 1px solid #d9ebdc;
+nav ul li {
+  display: inline-block;
 }
 
-nav ul li strong {
-  color: #1a531b;
-  font-size: 1.2rem;
-}
-
+/* LINKS DO MENU */
 nav a {
-  color: #1a531b;
-  font-weight: 500;
+  color: #1a4a22;
+  font-weight: 600;
   text-decoration: none;
-}
-
-nav a:hover,
-nav a.active {
-  color: #ffffff;
-  background-color: #2b653e;
+  font-size: 1rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 6px;
-  padding: 0.4rem 0.8rem;
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-/* --- CABEÇALHO DO CATÁLOGO --- */
+nav a:hover {
+  background-color: #cdebd3;
+  color: #103e16;
+}
+
+nav a.active {
+  background-color: #bde2c2;
+  color: #103e16;
+}
+
+/* === CORPO DO SITE MANTÉM ESTILO SUAVE === */
+body {
+  background-color: #f6fff8;
+  font-family: "Poppins", "Inter", sans-serif;
+  color: #1a3314;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- TÍTULO --- */
 .titulo {
   text-align: center;
   margin-top: 2.5rem;
@@ -45,117 +73,92 @@ nav a.active {
 }
 
 .titulo h1 {
-  color: #1f5130;
   font-size: 2rem;
-  margin-bottom: 0.4rem;
+  color: #1f5130;
   font-weight: 700;
 }
 
 .titulo p {
-  color: #4b5c4b;
+  color: #3e5742;
   font-size: 1.1rem;
 }
 
-/* --- GRADE RESPONSIVA DE PLANTAS --- */
+/* --- GRADE DE PLANTAS --- */
 .catalogo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   justify-items: center;
   align-items: stretch;
-  padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem 2rem 3rem;
 }
 
-/* --- CARD DE CADA PLANTA --- */
+/* --- CARD --- */
 .card {
+  background-color: #e8f5e3;
+  border: 1px solid #c8e2c2;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.25s ease;
+  max-width: 520px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(39, 103, 73, 0.08);
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  width: 100%;
-  max-width: 290px;
-  min-height: 440px;
-  border: 1px solid #e3f1e6;
+  justify-content: flex-start;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 22px rgba(39, 103, 73, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* IMAGEM */
+/* --- TÍTULO DO CARD --- */
+.card h3 {
+  color: #1a531b;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* --- IMAGEM --- */
 .card img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
-  border-bottom: 1px solid #e3f1e6;
-}
-
-/* CONTEÚDO */
-.card-content {
-  flex: 1;
-  padding: 1.2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card h3 {
-  font-weight: 700;
-  color: #1a531b;
-  font-size: 1.2rem;
-  margin-bottom: 0.6rem;
-}
-
-.card p {
-  color: #4a554a;
-  font-size: 1rem;
-  line-height: 1.5;
+  border-radius: 8px;
   margin-bottom: 1.2rem;
 }
 
-/* BOTÃO NA BASE DO CARD */
-.card-footer {
-  margin-top: auto;
-  padding: 0 1.2rem 1.2rem;
-}
-
-.card-footer a[role="button"] {
-  width: 100%;
-  background-color: #2b653e;
-  color: #fff;
-  border-radius: 10px;
-  padding: 0.7rem;
-  text-align: center;
+/* --- DESCRIÇÃO --- */
+.card p {
+  color: #35503b;
   font-size: 1rem;
-  font-weight: 500;
-  transition: 0.2s ease;
-  display: inline-block;
-}
-
-.card-footer a:hover {
-  background-color: #1f5130;
-  transform: translateY(-2px);
+  line-height: 1.5;
+  text-align: center;
+  margin: 0 0.8rem;
 }
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
-  .titulo h1 {
-    font-size: 1.6rem;
+  nav.container-fluid {
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .titulo p {
-    font-size: 1rem;
+  .catalogo-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .card {
     max-width: 100%;
+  }
+
+  .card img {
+    height: 200px;
   }
 }

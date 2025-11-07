@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Satisfy&display=swap');
 
-/* RESET GERAL */
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -9,7 +9,7 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADER */
+
 .header {
   text-align: center;
   background-color: #e6edd9;
@@ -50,7 +50,7 @@ body {
   object-fit: contain;
 }
 
-/* MAIN GRID: 4 colunas fixas */
+
 main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -60,7 +60,7 @@ main {
   margin: 0 auto;
 }
 
-/* CARD PRINCIPAL */
+
 .card {
   width: 250px;
   height: 220px;
@@ -93,7 +93,7 @@ main {
   opacity: 0.9;
 }
 
-/* CRÉDITOS (JOÃO E MARIA) */
+
 #container2 {
   display: flex;
   justify-content: center;
@@ -168,7 +168,7 @@ main {
   font-size: 1rem;
 }
 
-/* RODAPÉ COM GIF */
+
 footer {
   margin-top: 60px;
   width: 100%;
