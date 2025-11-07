@@ -215,3 +215,57 @@
   object-fit: contain;
   flex-shrink: 0;
 }
+
+nav.container-fluid {
+  background-color: #ecf9f0; /* tom verde-claro suave */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #d7eadc;
+  padding: 0.8rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav .logo img {
+  height: 42px; /* ajustável — ideal para uma logo escrita */
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav a {
+  color: #1a4a22;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #cdebd3;
+  color: #103e16;
+}
+
+nav a.active {
+  background-color: #bde2c2;
+  color: #103e16;
+}
