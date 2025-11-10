@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro de Crescimento</title>
+    <link rel="stylesheet" href="/css/cronometro.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="titulo">
+            <img src="/img/borboletinha copy.gif" alt="Germinação" class="icone-boboleta" />
+            Veja o progresso de suas plantas:
+        </h2>
+        <label for="planta">Planta registrada:</label>
+        <select id="planta">
+            <option value="">Selecione aqui</option>
+            <option value="Manjericão"> Manjericão</option>
+            <option value="Tomateiro"> Tomate</option>
+            <option value="Lírio-da-paz"> Lírio-da-paz</option>
+            <option value="Alecrim"> Alecrim</option>
+        </select>
+        <button onclick="continuarParaData()">Continuar</button>
+
+        <div id="formulario" style="display:none;">
+            <h2 id="tituloPlanta"></h2>
+            <label for="plantio">Data de Plantio:</label>
+            <input type="date" id="plantio" />
+            <button onclick="atualizarCronometro()">Atualizar cronômetro</button>
+
+            <div id="resultado" class="resultado" style="display:none;">
+                <p>Dias desde o plantio: <strong><span id="dias">0</span></strong></p>
+                <p>
+                    <img src="/img/semana.png" alt="Semana" class="icone-etapa" />
+                    Fase atual: <strong><span id="faseAtual">-</span></strong>
+                </p>
+                <div class="etapas">
+                    <div class="etapa">
+                        <img src="/img/semente.png" alt="Germinação" class="icone-etapa" />
+                        <span class="status" id="estagio1">Germinação</span>: 0–7 dias
+                    </div>
+                    <div class="etapa">
+                        <img src="/img/mudas.png" alt="Muda jovem" class="icone-etapa" />
+                        <span class="status" id="estagio2">Muda jovem</span>: 8–30 dias
+                    </div>
+                    <div class="etapa">
+                        <img src="/img/plantar (1).png" alt="Crescimento vegetativo" class="icone-etapa" />
+                        <span class="status" id="estagio3">Crescimento vegetativo</span>: 31–90 dias
+                    </div>
+                    <div class="etapa">
+                        <img src="/img/floracao.png" alt="Floração/frutificação" class="icone-etapa" />
+                        <span class="status" id="estagio4">Floração/frutificação</span>: 91+ dias
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function continuarParaData() {
+            const planta = document.getElementById('planta').value;
+            if (!planta) {
+                alert('Selecione uma planta para continuar.');
+                return;
+            }
+            document.getElementById('tituloPlanta').textContent = `Cronômetro para ${planta}`;
+            document.getElementById('formulario').style.display = 'block';
+        }
+
+        function atualizarCronometro() {
+            const plantio = document.getElementById('plantio').value;
+            if (!plantio) {
+                alert('Por favor, selecione a data de plantio.');
+                return;
+            }
+
+            const dataPlantio = new Date(plantio);
+            const hoje = new Date();
+            const diffMs = hoje - dataPlantio;
+            const dias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+            document.getElementById('dias').textContent = dias;
+            document.getElementById('resultado').style.display = 'block';
+
+            const [e1, e2, e3, e4] = [
+                document.getElementById('estagio1'),
+                document.getElementById('estagio2'),
+                document.getElementById('estagio3'),
+                document.getElementById('estagio4')
+            ];
+            [e1, e2, e3, e4].forEach(el => el.style.fontWeight = 'normal');
+
+            let fase = '';
+            if (dias <= 7) {
+                e1.style.fontWeight = 'bold';
+                fase = 'Germinação';
+            } else if (dias <= 30) {
+                e2.style.fontWeight = 'bold';
+                fase = 'Muda jovem';
+            } else if (dias <= 90) {
+                e3.style.fontWeight = 'bold';
+                fase = 'Crescimento vegetativo';
+            } else {
+                e4.style.fontWeight = 'bold';
+                fase = 'Floração/frutificação';
+            }
+
+            document.getElementById('faseAtual').textContent = fase;
+        }
+    </script>
+</body>
+
+</html>
